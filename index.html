@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ghwong379.github.io","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Keep it simple">
+<meta property="og:url" content="https://ghwong379.github.io/index.html">
+<meta property="og:site_name" content="Keep it simple">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="Kala 雞腿堡">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ghwong379.github.io/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>Keep it simple</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Keep it simple</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">學習，再學習</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kala 雞腿堡"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Kala 雞腿堡</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:ghwong379@gmail.com" title="E-Mail → mailto:ghwong379@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+      
+
+      
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ghwong379.github.io/2020/10/28/%E8%81%96%E7%B6%93%E4%BA%BA%E7%89%A9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Kala 雞腿堡">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep it simple">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/28/%E8%81%96%E7%B6%93%E4%BA%BA%E7%89%A9/" class="post-title-link" itemprop="url">聖經人物</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-10-28 21:05:00" itemprop="dateCreated datePublished" datetime="2020-10-28T21:05:00+08:00">2020-10-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新於</span>
+        <time title="修改時間：2020-10-29 22:41:24" itemprop="dateModified" datetime="2020-10-29T22:41:24+08:00">2020-10-29</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>約瑟</p>
+<p><img src="/images/pasted-0.png" alt="upload successful"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ghwong379.github.io/2020/10/26/%E7%B4%84%E7%91%9F%E7%9A%84%E4%B8%80%E7%94%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Kala 雞腿堡">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep it simple">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/26/%E7%B4%84%E7%91%9F%E7%9A%84%E4%B8%80%E7%94%9F/" class="post-title-link" itemprop="url">約瑟的一生</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-10-26 21:46:00" itemprop="dateCreated datePublished" datetime="2020-10-26T21:46:00+08:00">2020-10-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新於</span>
+        <time title="修改時間：2020-10-28 21:43:10" itemprop="dateModified" datetime="2020-10-28T21:43:10+08:00">2020-10-28</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%81%96%E7%B6%93/" itemprop="url" rel="index"><span itemprop="name">聖經</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%81%96%E7%B6%93/%E8%88%8A%E7%B4%84/" itemprop="url" rel="index"><span itemprop="name">舊約</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="創世記-第三十九章"><a href="#創世記-第三十九章" class="headerlink" title="創世記 第三十九章"></a>創世記 第三十九章</h2><p>約瑟被帶下埃及去。有一個埃及人，是法老的內臣─護衛長波提乏，從那些帶下他來的以實瑪利人手下買了他去。約瑟住在他主人埃及人的家中，<strong>耶和華與他同在</strong>，他就百事順利。他主人見耶和華與他同在，又見耶和華使他手裡所辦的盡都順利，約瑟就在主人眼前蒙恩，伺候他主人，並且主人派他管理家務，把一切所有的都交在他手裡。</p>
+<p>自從主人派約瑟管理家務和他一切所有的，耶和華就因約瑟的緣故賜福與那埃及人的家；凡家裡和田間一切所有的都蒙耶和華賜福。波提乏將一切所有的都交在約瑟的手中，除了自己所吃的飯，別的事一概不知。約瑟原來秀雅俊美。</p>
+<p>這事以後，約瑟主人的妻以目送情給約瑟，說：你與我同寢吧！約瑟不從，對他主人的妻說：看哪，一切家務，我主人都不知道；他把所有的都交在我手裡。在這家裡沒有比我大的；並且他沒有留下一樣不交給我，只留下了你，因為你是他的妻子。我怎能作這大惡，得罪神呢？<br>後來他天天和約瑟說，約瑟卻不聽從他，不與他同寢，也不和他在一處。</p>
+<p>有一天，約瑟進屋裡去辦事，家中人沒有一個在那屋裡，婦人就拉住他的衣裳，說：你與我同寢吧！約瑟把衣裳丟在婦人手裡，跑到外邊去了。婦人看見約瑟把衣裳丟在他手裡跑出去了，就叫了家裡的人來，對他們說：你們看！他帶了一個希伯來人進入我們家裡，要戲弄我們。他到我這裡來，要與我同寢，我就大聲喊叫。他聽見我放聲喊起來，就把衣裳丟在我這裡，跑到外邊去了。婦人把約瑟的衣裳放在自己那裡，等著他主人回家，就對他如此如此說：你所帶到我們這裡的那希伯來僕人進來要戲弄我，我放聲喊起來，他就把衣裳丟在我這裡，跑出去了。</p>
+<p>約瑟的主人聽見他妻子對他所說的話，說：你的僕人如此如此待我，他就生氣，把約瑟下在監裡，就是王的囚犯被囚的地方。於是約瑟在那裡坐監。但<strong>耶和華與約瑟同在</strong>，向他施恩，使他在司獄的眼前蒙恩。司獄就把監裡所有的囚犯都交在約瑟的手下；他們在那裡所辦的事都是經他的手。凡在約瑟手下的事，司獄一概不察，因為耶和華與約瑟同在；耶和華使他所做的盡都順利。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ghwong379.github.io/2020/10/26/%E8%81%96%E7%B6%93%E6%A6%82%E7%AE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Kala 雞腿堡">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep it simple">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/26/%E8%81%96%E7%B6%93%E6%A6%82%E7%AE%97/" class="post-title-link" itemprop="url">聖經書卷大意</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2020-10-26 09:45:00 / 修改時間：17:03:38" itemprop="dateCreated datePublished" datetime="2020-10-26T09:45:00+08:00">2020-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%81%96%E7%B6%93/" itemprop="url" rel="index"><span itemprop="name">聖經</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="舊約聖經"><a href="#舊約聖經" class="headerlink" title="舊約聖經"></a>舊約聖經</h1><p>創世記，種子地，萬物來源裡面記，神造亞當和夏娃，安置樂園享榮華。始祖違命受咒詛，神又揀選一民族。亞伯拉罕能順服，子孫後代都蒙福。</p>
+<p>出埃及記是法典，十條誡命記上面。又記摩西的傳奇，帶領百姓出埃及。</p>
+<p>利未記，很重要，聖潔條例要知道。為使選民都成聖，神叫摩西傳命令。</p>
+<p>民數記，記行程，四十二站記得清。曠野路程多艱難，百姓時常發怨言。</p>
+<p>申命記，要牢記，遵守誡命有福氣。忘了典章要受苦，不守律例受咒詛。</p>
+<p>約書亞記是爭戰，神領百姓進迦南。進入迦南趕仇敵，才能長久享安息。</p>
+<p>士師記，是背叛，神的百姓遭苦難。苦難之中呼求神，神興士師拯救人。</p>
+<p>路得記，記路德，路德愛婆真難得。她把真愛全付出，成為大衛的先祖。</p>
+<p>撒母耳記是立國，第一國王叫掃羅。掃羅頑梗又悖逆，神又重新立大衛。</p>
+<p>列王記，記列王，列王故事不尋常。好王遵行神旨意，壞王作惡被廢棄。</p>
+<p>歷代志，記歷史，述說歷代的故事。大事小事記得全，歷世歷代神掌管。</p>
+<p>以斯拉記是歸回，選民被擄又回歸。歸回不但建聖殿，還要歸回神裡面。</p>
+<p>尼希米記建城牆，所有破口全堵上。民族破口也要堵，信仰恢復歸上主。</p>
+<p>以斯帖記是傳奇，全書神字沒有提。神在暗中作大事，拯救百姓脫轄制。</p>
+<p>約伯記，講苦難，苦難之中有恩典。約伯經歷神熬煉，認識上帝得完全。</p>
+<p>詩篇共有一百五，各樣聖詩樣樣有。若把詩篇都記住，靈性必然大進步。</p>
+<p>箴言道理講得全，行事為人作指南。若把箴言都記住，一生不犯大錯誤。</p>
+<p>傳道書，是警鐘，提醒人生是虛空。人生在世如場夢，日光之上是永恆。</p>
+<p>雅歌描寫真愛情，真愛才能到永恆。良人密女兩廂配，預表基督愛教會。</p>
+<p>以賽亞書講審判，指出國家的混亂。君王百姓都犯罪，神差先知來責備。</p>
+<p>耶利米書字最多，全是責備人的惡。先知責備人不改，悲傷哭泣如流海。</p>
+<p>耶利米，作哀歌，哀嘆聖城的敗落。哀嘆自己的祖國，哀嘆同胞罪孽多。</p>
+<p>以西結書講預言，預言猶大遭苦難。預言列國受審判，預言聖城建新殿。</p>
+<p>但以理書講異象，各種異象不一樣。有的異象已應驗，有的異象快成全。</p>
+<p>何西阿書講神愛，呼喚背道快回來。聘你永遠為神妻，永永遠遠不離棄。</p>
+<p>約珥書，講末日，末日神要作大事。約沙法谷審判人，還要賜福神子民。</p>
+<p>阿摩司書論刑罰，刑罰列國罪惡大。選民不聽神的話，同樣也要受懲罰。</p>
+<p>俄巴底亞書最短，責備以東人陰險。兄弟猶大遭苦難，他在旁邊瞪眼看。</p>
+<p>約拿書，講救恩，上帝愛惜普世人。差遣約拿去傳道，約拿逃避受管教。</p>
+<p>彌迦書，講的清，基督生在伯利恆。末後萬民歸聖山，天下萬國沒爭戰。</p>
+<p>那鴻書，責亞述，亞述帝國要傾覆。惡貫滿盈必遭報，神的審判快來到。</p>
+<p>哈巴谷書有「質疑」，惡人作惡「神不理」。迦勒底人行強暴，刑罰遲早要來到。</p>
+<p>西番雅書論悔改，神的審判就要來。列邦列國必遭報，選民悔改歸正道。</p>
+<p>哈該書，論建殿，先知責備民和官。自己住房天花板，神殿荒涼沒人管。</p>
+<p>撒迦利亞講異象，每個異象不尋常。書中多處講預言，絕大部分已應驗。</p>
+<p>瑪拉基書是末卷，六個默示在其間。包含責備與警告，預言基督快來到。</p>
+<h1 id="新約聖經"><a href="#新約聖經" class="headerlink" title="新約聖經"></a>新約聖經</h1><p>馬太福音主為王，耶穌作王非尋常。掌管宇宙和世界，除淨人間的罪孽。</p>
+<p>馬可福音主為僕，主來世上受勞苦。服侍眾人作榜樣，門徒效法愛小羊。</p>
+<p>路加福音主為人，主來世上救靈魂。到處尋找迷路羊，救贖浪子上天堂。</p>
+<p>約翰福音主為神，道成肉身救世人。人若信他得生命，不至滅亡有永生。</p>
+<p>使徒行傳立教會，聖靈降臨人認罪。主差保羅傳神道，各地教會被建造。</p>
+<p>羅馬書，講稱義，因信稱義是真理。口裡承認心相信，靈魂得救天堂進。</p>
+<p>哥林多書論教會，復興教會要除罪。教會本是主新婦，只能專一愛基督。</p>
+<p>加拉太書論自由，在主裡面沒憂愁。屬靈自由真美好，充滿喜樂沒煩惱。</p>
+<p>以弗所書講救贖，保羅獄中寫此書。先講救恩之奧秘，後講生活之真理。</p>
+<p>腓立比書喜樂書，保羅坐監不怕苦。活著全為主基督，一生追求認識主。</p>
+<p>歌羅西書抵異端，勸勉信徒別走偏。基督才是萬有主，信徒一生當順服。</p>
+<p>帖前書，論主來，救主再來別疑懷。只要真心信靠他，保證被提到天家</p>
+<p>帖後書，講末世，末世必有稀奇事。離道反教大罪人，坐在神殿自稱神。</p>
+<p>提前提後提多書，教牧人員必須讀。治理教會守規章，循規蹈矩牧養羊。</p>
+<p>腓利門書勸我們，務要饒恕接納人。保羅勸勉腓利門，原諒犯錯小僕人。</p>
+<p>希伯來書論耶穌，他是超越的基督。他是更美之救主，信他到底得永福。</p>
+<p>雅各書，講行道，信道行道都重要。單有信心沒行為，這樣信徒真虛偽。</p>
+<p>彼得前書論受苦，為義受苦最有福。基督受苦是榜樣，苦難過後得獎賞。</p>
+<p>彼得後書護教書，揭露異端真面目。駁斥假道捍衛主，防止信徒走錯路。</p>
+<p>約翰一二三卷書，勸勉信徒認識主，持守真理防異教，彼此相愛最重要。</p>
+<p>猶大書，寫的短，教導信徒防異端。假師傅們雖猖狂，早晚他們要滅亡。</p>
+<p>啓示錄，論啓示，啓示將來必成事。信徒盼望新天地，永恆國度享福氣。</p>
+<p>六十六卷都講完，盼望靈胞記心間。仔細揣摩又思想，遵守主道得獎賞。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ghwong379.github.io/2020/10/24/Hexo-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Kala 雞腿堡">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep it simple">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/24/Hexo-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/" class="post-title-link" itemprop="url">Hexo 安裝筆記</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-10-24 22:39:00" itemprop="dateCreated datePublished" datetime="2020-10-24T22:39:00+08:00">2020-10-24</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新於</span>
+        <time title="修改時間：2020-10-31 14:41:12" itemprop="dateModified" datetime="2020-10-31T14:41:12+08:00">2020-10-31</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/NAS/" itemprop="url" rel="index"><span itemprop="name">NAS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>靜態網頁的魅力，由於愛玩的個性使然，看到新的東西就想試試看。</p>
+<h2 id="我的環境"><a href="#我的環境" class="headerlink" title="我的環境"></a>我的環境</h2><p>Synology 216play，由於這台NAS機器一天24小時開機，能夠多發揮一些功能總是好的。</p>
+<p>系統內可直接安裝Node.js，剩下的只需安裝Hexo及其他。</p>
+<p>首先使用putty工具，使用SSH登入系統</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/services/web </span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm init</span><br><span class="line">npm install hexo-theme-next</span><br><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
+
+<h2 id="後臺管理介面及佈署指令"><a href="#後臺管理介面及佈署指令" class="headerlink" title="後臺管理介面及佈署指令"></a>後臺管理介面及佈署指令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">admin:</span><br><span class="line">  username: </span><br><span class="line">  password_hash: </span><br><span class="line">  secret: </span><br><span class="line">  deployCommand: <span class="string">&#x27;./hexo-deploy.sh&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>再加上hexo-deploy.sh</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>不知怎地，資料無法放在Github, Gitlab, 只好先放在自己的Synology，做一個虛擬主機應付著。試了幾次發現目前的官網上的主題都無法安裝完成，真是煩人，目前正努力學習中，希望早日找到解方。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kala 雞腿堡</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
