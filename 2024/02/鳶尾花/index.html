@@ -5,24 +5,24 @@
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/hexoblog/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/hexoblog/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/hexoblog/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/hexoblog/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/hexoblog/css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ghwong379.github.io","root":"/hexoblog/","images":"/hexoblog/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/hexoblog/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ghwong379.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="鳶尾花數據集為了使用鳶尾花數據集（Iris dataset）撰寫一份適合的教學材料，我們將透過以下步驟介紹如何在Orange Data Mining中進行基礎的數據分析和分類模型建立。這份教學材料將幫助初學者了解數據挖掘的基本概念和操作流程。 教學目標 瞭解鳶尾花數據集的結構 學會使用Orange進行數據視覺化 使用分類樹模型進行數據分類 評估模型的性能  鳶尾花數據集介紹鳶尾花數據集是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="鳶尾花">
-<meta property="og:url" content="https://ghwong379.github.io/hexoblog/2024/02/%E9%B3%B6%E5%B0%BE%E8%8A%B1/index.html">
+<meta property="og:url" content="https://ghwong379.github.io/2024/02/%E9%B3%B6%E5%B0%BE%E8%8A%B1/index.html">
 <meta property="og:site_name" content="Keep it simple">
 <meta property="og:description" content="鳶尾花數據集為了使用鳶尾花數據集（Iris dataset）撰寫一份適合的教學材料，我們將透過以下步驟介紹如何在Orange Data Mining中進行基礎的數據分析和分類模型建立。這份教學材料將幫助初學者了解數據挖掘的基本概念和操作流程。 教學目標 瞭解鳶尾花數據集的結構 學會使用Orange進行數據視覺化 使用分類樹模型進行數據分類 評估模型的性能  鳶尾花數據集介紹鳶尾花數據集是">
 <meta property="og:locale" content="zh_TW">
@@ -38,11 +38,11 @@
 <meta name="twitter:image" content="https://ghwong379.github.io/hexoblog/images/iris-1image.png">
 
 
-<link rel="canonical" href="https://ghwong379.github.io/hexoblog/2024/02/%E9%B3%B6%E5%B0%BE%E8%8A%B1/">
+<link rel="canonical" href="https://ghwong379.github.io/2024/02/%E9%B3%B6%E5%B0%BE%E8%8A%B1/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ghwong379.github.io/hexoblog/2024/02/%E9%B3%B6%E5%B0%BE%E8%8A%B1/","path":"2024/02/鳶尾花/","title":"鳶尾花"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ghwong379.github.io/2024/02/%E9%B3%B6%E5%B0%BE%E8%8A%B1/","path":"2024/02/鳶尾花/","title":"鳶尾花"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>鳶尾花 | Keep it simple</title>
@@ -56,7 +56,7 @@
 
 
   <noscript>
-    <link rel="stylesheet" href="/hexoblog/css/noscript.css">
+    <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
 </head>
 
@@ -73,7 +73,7 @@
 
   <div class="site-meta">
 
-    <a href="/hexoblog/" class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
       <p class="site-title">Keep it simple</p>
       <i class="logo-line"></i>
@@ -123,18 +123,18 @@
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        <a href="/hexoblog/archives/">
+        <a href="/archives/">
           <span class="site-state-item-count">91</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-          <a href="/hexoblog/categories/">
+          <a href="/categories/">
         <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-          <a href="/hexoblog/tags/">
+          <a href="/tags/">
         <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
@@ -162,10 +162,10 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ghwong379.github.io/hexoblog/2024/02/%E9%B3%B6%E5%B0%BE%E8%8A%B1/">
+    <link itemprop="mainEntityOfPage" href="https://ghwong379.github.io/2024/02/%E9%B3%B6%E5%B0%BE%E8%8A%B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/hexoblog/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Kala 雞腿堡">
     </span>
 
@@ -350,12 +350,12 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/hexoblog/2024/02/%E6%95%B8%E5%BC%8F%E8%A8%AD%E8%A8%88/" rel="prev" title="參數式設計">
+                <a href="/2024/02/%E6%95%B8%E5%BC%8F%E8%A8%AD%E8%A8%88/" rel="prev" title="參數式設計">
                   <i class="fa fa-angle-left"></i> 參數式設計
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/hexoblog/2024/02/%E7%B6%AD%E5%A4%9A%E5%88%A9%E4%BA%9E%E5%BB%BA%E7%AF%89/" rel="next" title="維多利亞建築">
+                <a href="/2024/02/%E7%B6%AD%E5%A4%9A%E5%88%A9%E4%BA%9E%E5%BB%BA%E7%AF%89/" rel="next" title="維多利亞建築">
                   維多利亞建築 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
@@ -408,7 +408,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/hexoblog/js/comments.js"></script><script src="/hexoblog/js/utils.js"></script><script src="/hexoblog/js/motion.js"></script><script src="/hexoblog/js/sidebar.js"></script><script src="/hexoblog/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
   
 
