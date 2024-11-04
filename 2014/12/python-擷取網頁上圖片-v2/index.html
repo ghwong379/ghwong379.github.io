@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="123456789101112131415from openpyxl import load\_workbook  wb &#x3D; load\_workbook(filename &#x3D; &#x27;1.xlsx&#x27;)  wb.get\_sheet\_names()  ws &#x3D; wb.active    for i in range(8, 10):      if str(ws.cell(row&#x3D;i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 擷取網頁上圖片 v2">
+<meta property="og:url" content="http://localhost:4000/2014/12/python-%E6%93%B7%E5%8F%96%E7%B6%B2%E9%A0%81%E4%B8%8A%E5%9C%96%E7%89%87-v2/index.html">
+<meta property="og:site_name" content="Keep it simple">
+<meta property="og:description" content="123456789101112131415from openpyxl import load\_workbook  wb &#x3D; load\_workbook(filename &#x3D; &#x27;1.xlsx&#x27;)  wb.get\_sheet\_names()  ws &#x3D; wb.active    for i in range(8, 10):      if str(ws.cell(row&#x3D;i">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2014-12-19T08:55:00.000Z">
+<meta property="article:modified_time" content="2024-11-04T03:18:34.082Z">
+<meta property="article:author" content="Kala 雞腿堡">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://localhost:4000/2014/12/python-%E6%93%B7%E5%8F%96%E7%B6%B2%E9%A0%81%E4%B8%8A%E5%9C%96%E7%89%87-v2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"http://localhost:4000/2014/12/python-%E6%93%B7%E5%8F%96%E7%B6%B2%E9%A0%81%E4%B8%8A%E5%9C%96%E7%89%87-v2/","path":"2014/12/python-擷取網頁上圖片-v2/","title":"Python 擷取網頁上圖片 v2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python 擷取網頁上圖片 v2 | Keep it simple</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Keep it simple</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">學習，再學習</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kala 雞腿堡</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">91</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2014/12/python-%E6%93%B7%E5%8F%96%E7%B6%B2%E9%A0%81%E4%B8%8A%E5%9C%96%E7%89%87-v2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kala 雞腿堡">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Python 擷取網頁上圖片 v2 | Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python 擷取網頁上圖片 v2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2014-12-19 16:55:00" itemprop="dateCreated datePublished" datetime="2014-12-19T16:55:00+08:00">2014-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-11-04 11:18:34" itemprop="dateModified" datetime="2024-11-04T11:18:34+08:00">2024-11-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openpyxl <span class="keyword">import</span> load\_workbook  </span><br><span class="line">wb = load\_workbook(filename = <span class="string">&#x27;1.xlsx&#x27;</span>)  </span><br><span class="line">wb.get\_sheet\_names()  </span><br><span class="line">ws = wb.active  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>, <span class="number">10</span>):  </span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">str</span>(ws.cell(row=i, column=<span class="number">5</span>).value)\[<span class="number">0</span>:<span class="number">2</span>\] == <span class="string">&#x27;10&#x27;</span>:  </span><br><span class="line">        fname = <span class="built_in">str</span>(ws.cell(row=i, column=<span class="number">1</span>).value)\[<span class="number">6</span>:<span class="number">8</span>\]+<span class="built_in">str</span>(ws.cell(row=i, column=<span class="number">5</span>).value)+<span class="built_in">str</span>(ws.cell(row=i, column=<span class="number">6</span>).value)  </span><br><span class="line">        <span class="comment">#print ( fname.replace(&quot;　&quot;,&quot;&quot;) )  </span></span><br><span class="line">        resource = urllib.request.urlopen(<span class="string">&quot;http://path/&quot;</span>+ <span class="built_in">str</span>(ws.cell(row=i, column=<span class="number">5</span>).value) +<span class="string">&quot;.jpg&quot;</span>)         </span><br><span class="line">        output = <span class="built_in">open</span>(fname.replace(<span class="string">&quot;　&quot;</span>,<span class="string">&quot;&quot;</span>) + <span class="string">&quot;.jpg&quot;</span>, <span class="string">&quot;wb&quot;</span>)  </span><br><span class="line">        output.write(resource.read())  </span><br><span class="line">        output.close()  </span><br><span class="line">  </span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;老大，照片都已抓好，請參考！&quot;</span>)  </span><br></pre></td></tr></table></figure>
+<p>升級版，直接讀取系統產生之學生名單xls檔，唯一要做的事情就是要轉存成新版的xlsx就行  </p>
+<p>這個版本是用Python 3.4完成，許多函式都是上網查詢試錯，Coding真是有趣又累人的一件事情。心得記錄如下：  </p>
+<p>from openpyxl import load_workbook  </p>
+<p>必須先上網安裝<a target="_blank" rel="noopener" href="http://openpyxl.readthedocs.org/en/latest/">openpyxl</a>套件，此套件僅適用於新版的xlsx，舊版的不支援  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wb = load\_workbook(filename = <span class="string">&#x27;1.xlsx&#x27;</span>)  </span><br><span class="line">wb.get\_sheet\_names()  </span><br><span class="line">ws = wb.active  </span><br></pre></td></tr></table></figure>
+<p>開啟檔案後，取得工作表名稱，並設定為使用中  </p>
+<p><code>for i in range(8, 100):  </code></p>
+<p>開啟程式迴圈，一個班最多100人，資料從第8行開始讀取  </p>
+<p><code>if str(ws.cell(row=i, column=5).value)\[0:2\] == &#39;10&#39;:  </code></p>
+<p>比對儲存格前兩個字是否為10，是的話代表那行才是學生資料。這裡用到了ws.cell(row&#x3D;i, column&#x3D;5).value這個函數，可以直接取得使用中工作表單中第i列第5欄的資料，並使用str()將之轉為字串，str()[0:2]，並讀取前兩個字  </p>
+<p><code>fname = str(ws.cell(row=i, column=1).value)\[6:8\]+str(ws.cell(row=i, column=5).value)+str(ws.cell(row=i, column=6).value)</code>  </p>
+<p>此行將班別＋學號＋姓名組合而成檔案名稱，等下抓取使用  </p>
+<p><code>resource = urllib.request.urlopen(&quot;http://path/&quot;+ str(ws.cell(row=i, column=5).value) +&quot;.jpg&quot;)</code></p>
+<p>開啟檔案抓取模式，<a target="_blank" rel="noopener" href="https://docs.python.org/3.4/howto/urllib2.html?highlight=urllib">urllib.request.urlopen</a>是 Python 3.4的新語法，與2.x版不同  </p>
+<p><code>output = open(fname.replace(&quot;　&quot;,&quot;&quot;) + &quot;.jpg&quot;, &quot;wb&quot;)</code>  </p>
+<p>開啟二進制寫入模式，並用fname.replace(“　“,””)替換檔名中全形空白，因為有學生的名字只有兩個字，系統輸出時會補上全形空白  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">output.write(resource.read())  </span><br><span class="line">output.close()  </span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;老大，照片都已抓好，請參考！&quot;</span>)  </span><br><span class="line">一切完成，輸出字串高興一下</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2014/12/python-%E6%93%B7%E5%8F%96%E7%B6%B2%E9%A0%81%E4%B8%8A%E5%9C%96%E7%89%87-v1/" rel="prev" title="Python 擷取網頁上圖片 v1">
+                  <i class="fa fa-angle-left"></i> Python 擷取網頁上圖片 v1
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2015/01/ython-%E7%B6%B2%E9%A0%81%E5%85%A7%E5%AE%B9%E6%93%B7%E5%8F%96%E7%B7%B4%E7%BF%92/" rel="next" title="Python 網頁內容擷取練習">
+                  Python 網頁內容擷取練習 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Kala 雞腿堡</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="入手了Raspberry pi 2，由於手邊沒有HDMI線，因此想嘗試使用沒有螢幕、老鼠、鍵盤的安裝方式。皇天不負苦心人，上網查了一下終於搞定，寫下筆記，擔心日後忘記，主要資料來源參考Youtube上的教學資源。     影片中介紹的軟體說明如下：  SDFormatter，格式化SD Win32DiskImager，將 img檔，拷貝至SD卡中 Raspbian-wheezy.img，官網的作業">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Raspberry 初體驗">
+<meta property="og:url" content="http://localhost:4000/2015/11/raspberry-%E5%88%9D%E9%AB%94%E9%A9%97/index.html">
+<meta property="og:site_name" content="Keep it simple">
+<meta property="og:description" content="入手了Raspberry pi 2，由於手邊沒有HDMI線，因此想嘗試使用沒有螢幕、老鼠、鍵盤的安裝方式。皇天不負苦心人，上網查了一下終於搞定，寫下筆記，擔心日後忘記，主要資料來源參考Youtube上的教學資源。     影片中介紹的軟體說明如下：  SDFormatter，格式化SD Win32DiskImager，將 img檔，拷貝至SD卡中 Raspbian-wheezy.img，官網的作業">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://hexo.acad.myds.me/wp-content/uploads/2015/11/FireShot-2BCapture-2B1-2B-2BSD-2BCard-2BFormatter-2B-2BSD-2BAssocia_-2B-2Bhttps___www.sdcard.org_downloads_formatter_4_-1.png">
+<meta property="og:image" content="http://hexo.acad.myds.me/wp-content/uploads/2015/11/FireShot-2BCapture-2B2-2B-2BDownload-2BRaspbian-2Bfor-2BRaspbe_-2B-2Bhttps___www.raspberrypi.org_downloads_raspbian_-1.png">
+<meta property="article:published_time" content="2015-11-05T05:10:00.000Z">
+<meta property="article:modified_time" content="2024-11-04T03:18:34.013Z">
+<meta property="article:author" content="Kala 雞腿堡">
+<meta property="article:tag" content="raspberrypi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hexo.acad.myds.me/wp-content/uploads/2015/11/FireShot-2BCapture-2B1-2B-2BSD-2BCard-2BFormatter-2B-2BSD-2BAssocia_-2B-2Bhttps___www.sdcard.org_downloads_formatter_4_-1.png">
+
+
+<link rel="canonical" href="http://localhost:4000/2015/11/raspberry-%E5%88%9D%E9%AB%94%E9%A9%97/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"http://localhost:4000/2015/11/raspberry-%E5%88%9D%E9%AB%94%E9%A9%97/","path":"2015/11/raspberry-初體驗/","title":"Raspberry 初體驗"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Raspberry 初體驗 | Keep it simple</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Keep it simple</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">學習，再學習</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kala 雞腿堡</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">91</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2015/11/raspberry-%E5%88%9D%E9%AB%94%E9%A9%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kala 雞腿堡">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Raspberry 初體驗 | Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Raspberry 初體驗
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2015-11-05 13:10:00" itemprop="dateCreated datePublished" datetime="2015-11-05T13:10:00+08:00">2015-11-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-11-04 11:18:34" itemprop="dateModified" datetime="2024-11-04T11:18:34+08:00">2024-11-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/learning/" itemprop="url" rel="index"><span itemprop="name">learning</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>入手了<strong>Raspberry pi 2</strong>，由於手邊沒有<strong>HDMI</strong>線，因此想嘗試使用沒有螢幕、老鼠、鍵盤的安裝方式。皇天不負苦心人，上網查了一下終於搞定，寫下筆記，擔心日後忘記，主要資料來源參考<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=xarq3PI5zTw">Youtube上的教學資源</a>。    </p>
+<p>影片中介紹的軟體說明如下：</p>
+<ol>
+<li>SDFormatter，格式化SD</li>
+<li>Win32DiskImager，將 img檔，拷貝至SD卡中</li>
+<li>Raspbian-wheezy.img，官網的作業系統 img檔</li>
+<li>Advanced IP Scanner，搜尋指定網路區段中已連線或是未連線的裝置 IP</li>
+<li>Putty，遠端登入文字桌面的工具</li>
+<li>VNC viewer，遠端登入圖形畫面的工具</li>
+</ol>
+<p>首先準備SD卡，最好是8G以上，上網下載 <a target="_blank" rel="noopener" href="https://www.sdcard.org/downloads/formatter_4/">SDFormatter</a>，將SD卡格式化，之後運用Windows檔案管理員，選擇SD卡所在位置按右鍵，再次格式化為exFAT格式，可開啟快速化功能。</p>
+<p><a target="_blank" rel="noopener" href="http://hexo.acad.myds.me/wp-content/uploads/2015/11/FireShot-2BCapture-2B1-2B-2BSD-2BCard-2BFormatter-2B-2BSD-2BAssocia_-2B-2Bhttps___www.sdcard.org_downloads_formatter_4_-1.png"><img src="http://hexo.acad.myds.me/wp-content/uploads/2015/11/FireShot-2BCapture-2B1-2B-2BSD-2BCard-2BFormatter-2B-2BSD-2BAssocia_-2B-2Bhttps___www.sdcard.org_downloads_formatter_4_-1.png"></a></p>
+<p>上<a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/raspbian/"><strong>Raspberry</strong>官網下載RASPBIAN WHEEZY印象檔</a>，由於需指定開機印象檔，因此無法選擇NOOBS系統。下載完成後解壓縮在SD卡中。將SD卡放入Raspberry pi 2 Micro SD卡槽中，開機。並接上網路線，同時也要將電腦接上網路線。</p>
+<p><a target="_blank" rel="noopener" href="http://hexo.acad.myds.me/wp-content/uploads/2015/11/FireShot-2BCapture-2B2-2B-2BDownload-2BRaspbian-2Bfor-2BRaspbe_-2B-2Bhttps___www.raspberrypi.org_downloads_raspbian_-1.png"><img src="http://hexo.acad.myds.me/wp-content/uploads/2015/11/FireShot-2BCapture-2B2-2B-2BDownload-2BRaspbian-2Bfor-2BRaspbe_-2B-2Bhttps___www.raspberrypi.org_downloads_raspbian_-1.png"></a></p>
+<p>執行Advance IP SCAN，掃描<strong>Raspberry pi 2</strong>，可以找到已經開機並上網的Raspberry IP位址。再利用Putty進行登入，第一次使用使用名稱為pi，密碼為raspberry。</p>
+<p>登入後，可設定VNC，以後就可透過遠端登入桌面囉~~</p>
+<p>參考<a target="_blank" rel="noopener" href="http://www.books.com.tw/products/0010650522">柯博文書籍</a>中的建議，登入系統後必須完成一些設定如下：</p>
+<p>指令sudo raspi-config</p>
+<ol>
+<li>改變鍵盤Generic 105-key（這點我沒有看到畫面，不知那兒出了問題）</li>
+<li>國家及地區建議設定English（相容性較佳）</li>
+<li>改變語系zh_US.UTF-8</li>
+<li>改變管理者密碼（改變一下吧，不然大家都知道是預設密碼）</li>
+<li>啟動照相機（我還沒購買相機模組，所以沒設定）</li>
+<li>啟動超頻（作者建議可以調到最高，因為好像也不會出問題）</li>
+<li>擴大SD容量</li>
+<li>啟動SSH</li>
+</ol>
+<p>到此初步設定已完成，接下來就是要設定，讓Raspberry可以連上網路，並透過putty進行遠端登入操作。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/raspberrypi/" rel="tag"># raspberrypi</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2015/09/%E5%B0%88%E5%88%A9%E9%81%94%E4%BA%BA%E8%AC%9B%E5%BA%A7/" rel="prev" title="專利達人講座">
+                  <i class="fa fa-angle-left"></i> 專利達人講座
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2015/12/cultural-mandate-%E6%96%87%E5%8C%96%E4%BD%BF%E5%91%BD/" rel="next" title="Cultural mandate 文化使命">
+                  Cultural mandate 文化使命 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Kala 雞腿堡</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

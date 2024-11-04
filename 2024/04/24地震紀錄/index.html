@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="功能規劃 選擇CSV檔，讀取內容 依據地震深度繪製散點圖，圓點大小及透明度與規模成正比，反向繪製，文字有負號 依據地震分組進行統計，繪製推疊長條圖，並註明數量文字，顯示圖例 兩個圖共用X軸  程式學習字體負號  plt.rcParams[‘axes.unicode_minus’] &#x3D; False   中文  plt.rcParams[‘font.family’] &#x3D; [‘Mi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024地震紀錄">
+<meta property="og:url" content="http://localhost:4000/2024/04/24%E5%9C%B0%E9%9C%87%E7%B4%80%E9%8C%84/index.html">
+<meta property="og:site_name" content="Keep it simple">
+<meta property="og:description" content="功能規劃 選擇CSV檔，讀取內容 依據地震深度繪製散點圖，圓點大小及透明度與規模成正比，反向繪製，文字有負號 依據地震分組進行統計，繪製推疊長條圖，並註明數量文字，顯示圖例 兩個圖共用X軸  程式學習字體負號  plt.rcParams[‘axes.unicode_minus’] &#x3D; False   中文  plt.rcParams[‘font.family’] &#x3D; [‘Mi">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://localhost:4000/images/2024-35.png">
+<meta property="article:published_time" content="2024-04-26T08:02:00.000Z">
+<meta property="article:modified_time" content="2024-11-04T03:18:36.455Z">
+<meta property="article:author" content="Kala 雞腿堡">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/2024-35.png">
+
+
+<link rel="canonical" href="http://localhost:4000/2024/04/24%E5%9C%B0%E9%9C%87%E7%B4%80%E9%8C%84/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"http://localhost:4000/2024/04/24%E5%9C%B0%E9%9C%87%E7%B4%80%E9%8C%84/","path":"2024/04/24地震紀錄/","title":"2024地震紀錄"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>2024地震紀錄 | Keep it simple</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Keep it simple</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">學習，再學習</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%A6%8F%E5%8A%83"><span class="nav-number">1.</span> <span class="nav-text">功能規劃</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E5%AD%B8%E7%BF%92"><span class="nav-number">2.</span> <span class="nav-text">程式學習</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E9%AB%94"><span class="nav-number">2.1.</span> <span class="nav-text">字體</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E5%9C%96%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">子圖配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8GPT3-5"><span class="nav-number">2.3.</span> <span class="nav-text">使用GPT3.5</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">程式實作</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kala 雞腿堡</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">91</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2024/04/24%E5%9C%B0%E9%9C%87%E7%B4%80%E9%8C%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kala 雞腿堡">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2024地震紀錄 | Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2024地震紀錄
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-04-26 16:02:00" itemprop="dateCreated datePublished" datetime="2024-04-26T16:02:00+08:00">2024-04-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-11-04 11:18:36" itemprop="dateModified" datetime="2024-11-04T11:18:36+08:00">2024-11-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="/images/2024-35.png" alt="successful"></p>
+<h1 id="功能規劃"><a href="#功能規劃" class="headerlink" title="功能規劃"></a>功能規劃</h1><ul>
+<li>選擇CSV檔，讀取內容</li>
+<li>依據地震深度繪製散點圖，圓點大小及透明度與規模成正比，反向繪製，文字有負號</li>
+<li>依據地震分組進行統計，繪製推疊長條圖，並註明數量文字，顯示圖例</li>
+<li>兩個圖共用X軸</li>
+</ul>
+<h1 id="程式學習"><a href="#程式學習" class="headerlink" title="程式學習"></a>程式學習</h1><h2 id="字體"><a href="#字體" class="headerlink" title="字體"></a>字體</h2><p>負號</p>
+<blockquote>
+<p>plt.rcParams[‘axes.unicode_minus’] &#x3D; False </p>
+</blockquote>
+<p>中文</p>
+<blockquote>
+<p>plt.rcParams[‘font.family’] &#x3D; [‘Microsoft JhengHei’]</p>
+</blockquote>
+<h2 id="子圖配置"><a href="#子圖配置" class="headerlink" title="子圖配置"></a>子圖配置</h2><blockquote>
+<p> fig, (ax1, ax2) &#x3D; plt.subplots(2, 1, figsize&#x3D;(10, 8), sharex&#x3D;True, gridspec_kw&#x3D;{‘height_ratios’: [2, 1]})</p>
+</blockquote>
+<h2 id="使用GPT3-5"><a href="#使用GPT3-5" class="headerlink" title="使用GPT3.5"></a>使用GPT3.5</h2><ol>
+<li>CSV為BIG5編碼，第一列為資料時間，第二列為欄位，第三列開始才是資料</li>
+<li>遍歷與程式相同路徑之CSV檔，製作下拉示選單，讓使用者選取檔案</li>
+<li>依據規模繪製散點圖，反向繪至，圓點大小與規模三次方成正比，圓點透明度與規模成正比</li>
+<li>依規模分成六組，每組不同顏色，分別統計地震總數，繪製堆疊長條圖，並在中間顯示地震數量文字</li>
+</ol>
+<h1 id="程式實作"><a href="#程式實作" class="headerlink" title="程式實作"></a>程式實作</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> Tk, StringVar, OptionMenu, Button, Label, messagebox</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> ttk</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"></span><br><span class="line"><span class="comment"># 設置中文字體</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.family&#x27;</span>] = [<span class="string">&#x27;Microsoft JhengHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span> </span><br><span class="line"><span class="comment"># 創建一個 Tkinter 主視窗</span></span><br><span class="line">root = Tk()</span><br><span class="line">root.title(<span class="string">&quot;地震堆疊長條圖與散點圖動畫模擬&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Tkinter 主視窗中添加一個字串變數以存儲用戶選擇的 CSV 檔案名稱</span></span><br><span class="line">selected_file = StringVar(root)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Tkinter 主視窗中添加一個下拉式選單，顯示所有 CSV 檔案名稱</span></span><br><span class="line">file_label = ttk.Label(root, text=<span class="string">&quot;選擇CSV檔案:&quot;</span>)</span><br><span class="line">file_label.grid(row=<span class="number">0</span>, column=<span class="number">0</span>, padx=<span class="number">10</span>, pady=<span class="number">5</span>)</span><br><span class="line">file_option = OptionMenu(root, selected_file, <span class="string">&quot;&quot;</span>)</span><br><span class="line">file_option.grid(row=<span class="number">0</span>, column=<span class="number">1</span>, padx=<span class="number">10</span>, pady=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 獲取程式所在路徑</span></span><br><span class="line">current_directory = Path(__file__).parent</span><br><span class="line"></span><br><span class="line"><span class="comment"># 獲取程式所在路徑中所有 CSV 檔案的檔案名稱</span></span><br><span class="line">csv_files = [file.name <span class="keyword">for</span> file <span class="keyword">in</span> current_directory.glob(<span class="string">&quot;*.csv&quot;</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新下拉式選單中的選項</span></span><br><span class="line">file_option[<span class="string">&#x27;menu&#x27;</span>].delete(<span class="number">0</span>, <span class="string">&#x27;end&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> csv_files:</span><br><span class="line">    file_option[<span class="string">&#x27;menu&#x27;</span>].add_command(label=file, command=<span class="keyword">lambda</span> f=file: selected_file.<span class="built_in">set</span>(f))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定義一個函數，在用戶選擇 CSV 檔案後開始模擬</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">start_animation</span>():</span><br><span class="line">    file_name = selected_file.get()  <span class="comment"># 獲取用戶選擇的 CSV 檔案名稱</span></span><br><span class="line">    file_path = current_directory / file_name  <span class="comment"># 構建選擇的 CSV 檔案的完整路徑</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 讀取選擇的 CSV 檔案</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        earthquake_data = pd.read_csv(file_path, encoding=<span class="string">&#x27;big5&#x27;</span>, parse_dates=[<span class="string">&#x27;地震時間&#x27;</span>], skiprows=[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        messagebox.showerror(<span class="string">&quot;錯誤&quot;</span>, <span class="string">f&quot;讀取CSV檔案時出現錯誤：<span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 檢查資料集是否為空</span></span><br><span class="line">    <span class="keyword">if</span> earthquake_data.empty:</span><br><span class="line">        <span class="comment"># 若資料集為空，顯示錯誤訊息</span></span><br><span class="line">        messagebox.showerror(<span class="string">&quot;錯誤&quot;</span>, <span class="string">&quot;資料集為空，請選擇有效的 CSV 檔案。&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 分割子圖，上方為堆疊長條圖，下方為散點圖</span></span><br><span class="line">    fig, (ax1, ax2) = plt.subplots(<span class="number">2</span>, <span class="number">1</span>, figsize=(<span class="number">10</span>, <span class="number">8</span>), sharex=<span class="literal">True</span>, gridspec_kw=&#123;<span class="string">&#x27;height_ratios&#x27;</span>: [<span class="number">2</span>, <span class="number">1</span>]&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 計算每日地震規模的加總</span></span><br><span class="line">    daily_total = earthquake_data.groupby(earthquake_data[<span class="string">&#x27;地震時間&#x27;</span>].dt.date)[<span class="string">&#x27;規模&#x27;</span>].<span class="built_in">sum</span>()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定義規模的分組方式與對應顏色</span></span><br><span class="line">    bins = [<span class="number">0</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">10</span>]</span><br><span class="line">    labels = [<span class="string">&#x27;0-3&#x27;</span>, <span class="string">&#x27;3-4&#x27;</span>, <span class="string">&#x27;4-5&#x27;</span>, <span class="string">&#x27;5-6&#x27;</span>, <span class="string">&#x27;6-10&#x27;</span>]</span><br><span class="line">    colors = [<span class="string">&#x27;#1f77b4&#x27;</span>, <span class="string">&#x27;#ff7f0e&#x27;</span>, <span class="string">&#x27;#2ca02c&#x27;</span>, <span class="string">&#x27;#d62728&#x27;</span>, <span class="string">&#x27;#9467bd&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 計算每日地震次數的堆疊數據</span></span><br><span class="line">    earthquake_data[<span class="string">&#x27;地震分類&#x27;</span>] = pd.cut(earthquake_data[<span class="string">&#x27;規模&#x27;</span>], bins=bins, labels=labels)</span><br><span class="line">    daily_counts = earthquake_data.groupby([earthquake_data[<span class="string">&#x27;地震時間&#x27;</span>].dt.date, <span class="string">&#x27;地震分類&#x27;</span>]).size().unstack(fill_value=<span class="number">0</span>)</span><br><span class="line">    daily_counts_cumsum = daily_counts.cumsum(axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 繪製堆疊長條圖</span></span><br><span class="line">    bottom = np.zeros(<span class="built_in">len</span>(daily_counts_cumsum))</span><br><span class="line">    <span class="keyword">for</span> label, color <span class="keyword">in</span> <span class="built_in">zip</span>(labels, colors):</span><br><span class="line">        ax1.bar(daily_counts_cumsum.index, daily_counts[label], label=<span class="string">f&#x27;規模 <span class="subst">&#123;label&#125;</span>&#x27;</span>, bottom=bottom, color=color)</span><br><span class="line">        bottom += daily_counts[label]</span><br><span class="line">        <span class="comment"># 在每個分段的中間寫上地震總數</span></span><br><span class="line">        <span class="keyword">for</span> i, count <span class="keyword">in</span> <span class="built_in">enumerate</span>(daily_counts[label]):</span><br><span class="line">            ax1.text(daily_counts_cumsum.index[i], bottom[i] - count / <span class="number">2</span>, <span class="built_in">str</span>(count), ha=<span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;center&#x27;</span>, color=<span class="string">&#x27;white&#x27;</span>, fontsize=<span class="number">8</span>, rotation=<span class="number">30</span>)</span><br><span class="line">    ax1.set_ylabel(<span class="string">&#x27;地震次數&#x27;</span>)</span><br><span class="line">    ax1.set_title(<span class="string">&#x27;地震堆疊長條圖&#x27;</span>)</span><br><span class="line">    ax1.grid(<span class="literal">True</span>, linestyle=<span class="string">&#x27;:&#x27;</span>, color=<span class="string">&#x27;gray&#x27;</span>)  <span class="comment"># 添加格線</span></span><br><span class="line">    ax1.legend()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 繪製散點圖</span></span><br><span class="line">    sizes = earthquake_data[<span class="string">&#x27;規模&#x27;</span>] ** <span class="number">3</span>  <span class="comment"># 調整原點大小</span></span><br><span class="line">    alpha = earthquake_data[<span class="string">&#x27;規模&#x27;</span>] / earthquake_data[<span class="string">&#x27;規模&#x27;</span>].<span class="built_in">max</span>()  <span class="comment"># 將透明度與規模成正比    </span></span><br><span class="line">    scatter_plot = ax2.scatter(earthquake_data[<span class="string">&#x27;地震時間&#x27;</span>].dt.date, -earthquake_data[<span class="string">&#x27;深度&#x27;</span>], s=sizes, c=earthquake_data[<span class="string">&#x27;規模&#x27;</span>], cmap=<span class="string">&#x27;coolwarm&#x27;</span>, alpha=<span class="number">0.6</span>)      </span><br><span class="line">    scatter_plot.set_facecolors([colors[labels.index(label)] <span class="keyword">for</span> label <span class="keyword">in</span> earthquake_data[<span class="string">&#x27;地震分類&#x27;</span>]])</span><br><span class="line"></span><br><span class="line">    ax2.set_xlabel(<span class="string">&#x27;日期&#x27;</span>)</span><br><span class="line">    ax2.set_ylabel(<span class="string">&#x27;地震深度&#x27;</span>)</span><br><span class="line">    ax2.set_title(<span class="string">&#x27;地震散點圖&#x27;</span>)</span><br><span class="line">    ax2.grid(<span class="literal">True</span>, linestyle=<span class="string">&#x27;:&#x27;</span>, color=<span class="string">&#x27;gray&#x27;</span>)  <span class="comment"># 添加格線</span></span><br><span class="line">    </span><br><span class="line">    plt.xticks(rotation=<span class="number">45</span>)</span><br><span class="line">    plt.tight_layout()</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 Tkinter 主視窗中添加一個開始鈕，用戶點擊開始鈕後開始模擬</span></span><br><span class="line">start_button = ttk.Button(root, text=<span class="string">&quot;開始動畫&quot;</span>, command=start_animation)</span><br><span class="line">start_button.grid(row=<span class="number">1</span>, column=<span class="number">0</span>, columnspan=<span class="number">2</span>, pady=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 啟動 Tkinter 主迴圈</span></span><br><span class="line">root.mainloop()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/04/%E9%9C%87%E6%A8%A1%E6%93%AC/" rel="prev" title="地震模擬">
+                  <i class="fa fa-angle-left"></i> 地震模擬
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/05/%E5%85%8B%E6%9E%97%E5%A7%86%E7%9A%84%E5%A5%B3%E5%AD%A9/" rel="next" title="克林姆的女孩">
+                  克林姆的女孩 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Kala 雞腿堡</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

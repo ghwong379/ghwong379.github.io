@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Lua語言支持多種數據類型，這些類型允許開發者處理各種形式的數據，如數字、字符串、布爾值等。以下是Lua支持的主要數據類型的簡要介紹和示例程式： 1. Nilnil是一個特殊的類型，用來表示無效值。當一個變量沒有初始化時，其值就是nil。 12local a &#x3D; nilprint(&quot;a 的類型是：&quot; .. type(a))  -- 輸出: a 的類型是：nil  2. Bool">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lua 數據類型">
+<meta property="og:url" content="http://localhost:4000/2024/02/ua-%E6%95%B8%E6%93%9A%E9%A1%9E%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Keep it simple">
+<meta property="og:description" content="Lua語言支持多種數據類型，這些類型允許開發者處理各種形式的數據，如數字、字符串、布爾值等。以下是Lua支持的主要數據類型的簡要介紹和示例程式： 1. Nilnil是一個特殊的類型，用來表示無效值。當一個變量沒有初始化時，其值就是nil。 12local a &#x3D; nilprint(&quot;a 的類型是：&quot; .. type(a))  -- 輸出: a 的類型是：nil  2. Bool">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-02-22T14:48:57.000Z">
+<meta property="article:modified_time" content="2024-11-04T03:18:34.724Z">
+<meta property="article:author" content="Kala 雞腿堡">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://localhost:4000/2024/02/ua-%E6%95%B8%E6%93%9A%E9%A1%9E%E5%9E%8B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"http://localhost:4000/2024/02/ua-%E6%95%B8%E6%93%9A%E9%A1%9E%E5%9E%8B/","path":"2024/02/ua-數據類型/","title":"Lua 數據類型"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Lua 數據類型 | Keep it simple</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Keep it simple</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">學習，再學習</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Nil"><span class="nav-number">1.</span> <span class="nav-text">1. Nil</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Boolean"><span class="nav-number">2.</span> <span class="nav-text">2. Boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Number"><span class="nav-number">3.</span> <span class="nav-text">3. Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-String"><span class="nav-number">4.</span> <span class="nav-text">4. String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Table"><span class="nav-number">5.</span> <span class="nav-text">5. Table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Function"><span class="nav-number">6.</span> <span class="nav-text">6. Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Userdata"><span class="nav-number">7.</span> <span class="nav-text">7. Userdata</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Thread"><span class="nav-number">8.</span> <span class="nav-text">8. Thread</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kala 雞腿堡</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">91</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2024/02/ua-%E6%95%B8%E6%93%9A%E9%A1%9E%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kala 雞腿堡">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Lua 數據類型 | Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Lua 數據類型
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-02-22 22:48:57" itemprop="dateCreated datePublished" datetime="2024-02-22T22:48:57+08:00">2024-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-11-04 11:18:34" itemprop="dateModified" datetime="2024-11-04T11:18:34+08:00">2024-11-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Lua語言支持多種數據類型，這些類型允許開發者處理各種形式的數據，如數字、字符串、布爾值等。以下是Lua支持的主要數據類型的簡要介紹和示例程式：</p>
+<h3 id="1-Nil"><a href="#1-Nil" class="headerlink" title="1. Nil"></a>1. Nil</h3><p><code>nil</code>是一個特殊的類型，用來表示無效值。當一個變量沒有初始化時，其值就是<code>nil</code>。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> a = <span class="literal">nil</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a 的類型是：&quot;</span> .. <span class="built_in">type</span>(a))  <span class="comment">-- 輸出: a 的類型是：nil</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Boolean"><a href="#2-Boolean" class="headerlink" title="2. Boolean"></a>2. Boolean</h3><p>布爾類型有兩個值：<code>true</code>和<code>false</code>。它們用於條件判斷。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> isLuaEasy = <span class="literal">true</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Is Lua easy? &quot;</span> .. <span class="built_in">tostring</span>(isLuaEasy))  <span class="comment">-- 輸出: Is Lua easy? true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Number"><a href="#3-Number" class="headerlink" title="3. Number"></a>3. Number</h3><p>在Lua中，數字類型（<code>number</code>）通常用於表示整數和浮點數。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> intNumber = <span class="number">10</span></span><br><span class="line"><span class="keyword">local</span> floatNumber = <span class="number">3.14</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;intNumber 的類型是：&quot;</span> .. <span class="built_in">type</span>(intNumber))  <span class="comment">-- 輸出: intNumber 的類型是：number</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;floatNumber 的類型是：&quot;</span> .. <span class="built_in">type</span>(floatNumber))  <span class="comment">-- 輸出: floatNumber 的類型是：number</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-String"><a href="#4-String" class="headerlink" title="4. String"></a>4. String</h3><p>字符串（<code>string</code>）用於處理文本。在Lua中，可以使用雙引號<code>&quot;&quot;</code>、單引號<code>&#39;&#39;</code>或長括號<code>[[ ]]</code>來表示字符串。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> greeting = <span class="string">&quot;Hello, Lua!&quot;</span></span><br><span class="line"><span class="built_in">print</span>(greeting)  <span class="comment">-- 輸出: Hello, Lua!</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Table"><a href="#5-Table" class="headerlink" title="5. Table"></a>5. Table</h3><p>表（<code>table</code>）是Lua中唯一的數據結構，用來存儲和操作鍵值對。表既可以作為數組使用，也可以作為字典。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> person = &#123;name = <span class="string">&quot;John&quot;</span>, age = <span class="number">30</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Name: &quot;</span> .. person.name .. <span class="string">&quot;, Age: &quot;</span> .. person.age)  <span class="comment">-- 輸出: Name: John, Age: 30</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Function"><a href="#6-Function" class="headerlink" title="6. Function"></a>6. Function</h3><p>函數（<code>function</code>）在Lua中是一等公民，意味著函數可以存儲在變量中，可以作為參數傳遞，也可以作為返回值。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(x, y)</span></span></span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;10 + 20 = &quot;</span> .. add(<span class="number">10</span>, <span class="number">20</span>))  <span class="comment">-- 輸出: 10 + 20 = 30</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-Userdata"><a href="#7-Userdata" class="headerlink" title="7. Userdata"></a>7. Userdata</h3><p><code>userdata</code>類型用於表示由應用程序或C語言創建的數據，Lua腳本可以使用它，但不能直接創建或修改它。</p>
+<h3 id="8-Thread"><a href="#8-Thread" class="headerlink" title="8. Thread"></a>8. Thread</h3><p><code>thread</code>類型用於實現協同程序（coroutines），這是Lua中的一種輕量級線程。</p>
+<p>這些數據類型是Lua提供的基本建築塊，使得Lua成為一種靈活且功能強大的編程語言。通过理解和運用這些數據類型，你可以在Lua中實現豐富的功能和應用。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/02/Lua-%E7%9A%84%E8%AE%8A%E9%87%8F/" rel="prev" title="Lua 的變量">
+                  <i class="fa fa-angle-left"></i> Lua 的變量
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/02/Lua-%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/" rel="next" title="Lua 物件導向">
+                  Lua 物件導向 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Kala 雞腿堡</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

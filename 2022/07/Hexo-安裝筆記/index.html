@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"localhost","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Hexo 是什麼靜態網頁的魅力，由於愛玩的個性使然，看到新的東西就想試試看。可以產生靜態頁面，加速瀏覽下載，版本升級維護容易，且不須任何資料庫即可運行。 Wordpress importer可將wordpress export成xml，導入系統一次完成。使用上非常簡單， 安裝外掛1npm install hexo-migrator-wordpress --save 匯出wordpress xml然">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 安裝筆記">
+<meta property="og:url" content="http://localhost:4000/2022/07/Hexo-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/index.html">
+<meta property="og:site_name" content="Keep it simple">
+<meta property="og:description" content="Hexo 是什麼靜態網頁的魅力，由於愛玩的個性使然，看到新的東西就想試試看。可以產生靜態頁面，加速瀏覽下載，版本升級維護容易，且不須任何資料庫即可運行。 Wordpress importer可將wordpress export成xml，導入系統一次完成。使用上非常簡單， 安裝外掛1npm install hexo-migrator-wordpress --save 匯出wordpress xml然">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://localhost:4000/images/hexo-admin.png">
+<meta property="og:image" content="http://localhost:4000/images/hexo-codewrap.png">
+<meta property="og:image" content="http://localhost:4000/images/pasted-27.png">
+<meta property="og:image" content="http://localhost:4000/images/hexo-disqus.png">
+<meta property="og:image" content="http://localhost:4000/images/pasted-29.png">
+<meta property="article:published_time" content="2022-07-08T14:39:00.000Z">
+<meta property="article:modified_time" content="2024-11-04T03:18:36.022Z">
+<meta property="article:author" content="Kala 雞腿堡">
+<meta property="article:tag" content="系統">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/hexo-admin.png">
+
+
+<link rel="canonical" href="http://localhost:4000/2022/07/Hexo-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"http://localhost:4000/2022/07/Hexo-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/","path":"2022/07/Hexo-安裝筆記/","title":"Hexo 安裝筆記"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo 安裝筆記 | Keep it simple</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Keep it simple</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">學習，再學習</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-%E6%98%AF%E4%BB%80%E9%BA%BC"><span class="nav-number">1.</span> <span class="nav-text">Hexo 是什麼</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Wordpress-importer"><span class="nav-number">1.1.</span> <span class="nav-text">Wordpress importer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E5%A4%96%E6%8E%9B"><span class="nav-number">1.1.1.</span> <span class="nav-text">安裝外掛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%AF%E5%87%BAwordpress-xml"><span class="nav-number">1.1.2.</span> <span class="nav-text">匯出wordpress xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B4%E4%BD%B5%E8%87%B3Hexo"><span class="nav-number">1.1.3.</span> <span class="nav-text">整併至Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E7%92%B0%E5%A2%83"><span class="nav-number">1.2.</span> <span class="nav-text">安裝環境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH"><span class="nav-number">1.2.1.</span> <span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-number">1.2.2.</span> <span class="nav-text">安裝指定版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E4%BB%8B%E9%9D%A2%E5%8F%8A%E4%BD%88%E7%BD%B2%E6%8C%87%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text">後臺管理介面及佈署指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Melody-%E4%B8%BB%E9%A1%8C%E5%AE%89%E8%A3%9D"><span class="nav-number">1.4.</span> <span class="nav-text">Melody 主題安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text">安裝方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%A7%8B%E4%B8%BB%E9%A1%8C"><span class="nav-number">1.4.2.</span> <span class="nav-text">架構主題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%9Ddisqus"><span class="nav-number">1.4.3.</span> <span class="nav-text">安裝disqus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><span class="nav-number">1.4.4.</span> <span class="nav-text">注意事項</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-%E4%B8%BB%E9%A1%8C%E4%B9%9F%E4%B8%8D%E9%8C%AF"><span class="nav-number">1.5.</span> <span class="nav-text">Next 主題也不錯</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kala 雞腿堡</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">91</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2022/07/Hexo-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kala 雞腿堡">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Hexo 安裝筆記 | Keep it simple">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo 安裝筆記
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-07-08 22:39:00" itemprop="dateCreated datePublished" datetime="2022-07-08T22:39:00+08:00">2022-07-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-11-04 11:18:36" itemprop="dateModified" datetime="2024-11-04T11:18:36+08:00">2024-11-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/learning/" itemprop="url" rel="index"><span itemprop="name">learning</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Hexo-是什麼"><a href="#Hexo-是什麼" class="headerlink" title="Hexo 是什麼"></a>Hexo 是什麼</h1><p>靜態網頁的魅力，由於愛玩的個性使然，看到新的東西就想試試看。可以產生靜態頁面，加速瀏覽下載，版本升級維護容易，且不須任何資料庫即可運行。</p>
+<h2 id="Wordpress-importer"><a href="#Wordpress-importer" class="headerlink" title="Wordpress importer"></a>Wordpress importer</h2><p>可將wordpress export成xml，導入系統一次完成。使用上非常簡單，</p>
+<h3 id="安裝外掛"><a href="#安裝外掛" class="headerlink" title="安裝外掛"></a>安裝外掛</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-migrator-wordpress --save</span><br></pre></td></tr></table></figure>
+<h3 id="匯出wordpress-xml"><a href="#匯出wordpress-xml" class="headerlink" title="匯出wordpress xml"></a>匯出wordpress xml</h3><p>然後在你的wordpress中，使用<code>tool</code>，<code>export</code>。</p>
+<h3 id="整併至Hexo"><a href="#整併至Hexo" class="headerlink" title="整併至Hexo"></a>整併至Hexo</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo migrate wordpress &lt;<span class="built_in">source</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="安裝環境"><a href="#安裝環境" class="headerlink" title="安裝環境"></a>安裝環境</h2><p>Synology 216play，由於這台NAS機器一天24小時開機，能夠多發揮一些功能總是好的。由於系統內可直接安裝Node.js，剩下的只需安裝Hexo及其他<a target="_blank" rel="noopener" href="https://hexo.io/plugins/">外掛</a>或是<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主題</a>即可。</p>
+<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p>首先使用putty工具，使用SSH登入系統</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/services/web </span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm init</span><br><span class="line">npm install hexo-theme-melody</span><br><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
+
+<h3 id="安裝指定版本"><a href="#安裝指定版本" class="headerlink" title="安裝指定版本"></a>安裝指定版本</h3><p><code>npm install hexo@x.x.x</code></p>
+<h2 id="後臺管理介面及佈署指令"><a href="#後臺管理介面及佈署指令" class="headerlink" title="後臺管理介面及佈署指令"></a>後臺管理介面及佈署指令</h2><p><img src="/images/hexo-admin.png" alt="Hexo-admin後台畫面"></p>
+<p>以下這段文字需增加在<code>_config.melody.yml</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">admin:</span><br><span class="line">  username:使用者名稱 </span><br><span class="line">  password_hash: 密碼</span><br><span class="line">  secret: </span><br><span class="line">  deployCommand: <span class="string">&#x27;./hexo-deploy.sh&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>再加上hexo-deploy.sh</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexi deploy</span><br></pre></td></tr></table></figure>
+
+<p><del>不知怎地，資料無法放在Github, Gitlab, 只好先放在自己的Synology，做一個虛擬主機應付著。試了幾次發現目前的官網上的主題都無法安裝完成，真是煩人，目前正努力學習中，希望早日找到解方。</del>終於找到一篇比較清楚的教程，設定好了</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  reposity: </span><br><span class="line">  branch: </span><br></pre></td></tr></table></figure>
+
+<h2 id="Melody-主題安裝"><a href="#Melody-主題安裝" class="headerlink" title="Melody 主題安裝"></a>Melody 主題安裝</h2><h3 id="安裝方式"><a href="#安裝方式" class="headerlink" title="安裝方式"></a>安裝方式</h3><h3 id="架構主題"><a href="#架構主題" class="headerlink" title="架構主題"></a>架構主題</h3><p><img src="/images/hexo-codewrap.png" alt="程式碼自動換行"></p>
+<h3 id="安裝disqus"><a href="#安裝disqus" class="headerlink" title="安裝disqus"></a>安裝disqus</h3><p><img src="/images/pasted-27.png" alt="config.yml"></p>
+<p><img src="/images/hexo-disqus.png" alt="安裝畫面"></p>
+<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><p>可自訂首頁圖片，文章中圖片可以相簿方式瀏覽<br>Melody &gt; 5.0，安裝時，需製作_config.melody.yml</p>
+<blockquote>
+<p>Hexo version &gt;&#x3D; 5.0 theme-melody v1.8.0+<br>create a _config.melody.yml in your hexo work folder.<br>copy the contents of .&#x2F;node_modules&#x2F;hexo-theme-melody&#x2F;_config.yml (so you should install hexo-theme-melody first.) to _config.melody.yml.</p>
+</blockquote>
+<h2 id="Next-主題也不錯"><a href="#Next-主題也不錯" class="headerlink" title="Next 主題也不錯"></a>Next 主題也不錯</h2><p><a target="_blank" rel="noopener" href="https://molunerfinn.com/hexo-theme-melody-doc/">Source</a></p>
+<p><img src="/images/pasted-29.png" alt="next-muse"></p>
+<p>記得next的設計要修改node_module&#x2F;hexo-theme-next&#x2F;_config.ymal</p>
+<p>其中有關搜尋的功能</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Algolia Search</span></span><br><span class="line"><span class="comment"># For more information: https://www.algolia.com</span></span><br><span class="line"><span class="attr">algolia_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%B3%BB%E7%B5%B1/" rel="tag"># 系統</a>
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/%E5%BE%A9%E8%88%88%E7%9A%84%E7%81%AB/" rel="prev" title="復興的火">
+                  <i class="fa fa-angle-left"></i> 復興的火
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/%E7%B6%AD%E4%BF%AE%E7%AD%86%E9%9B%BB%E7%B4%80%E5%AF%A6/" rel="next" title="維修筆電紀實">
+                  維修筆電紀實 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Kala 雞腿堡</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
