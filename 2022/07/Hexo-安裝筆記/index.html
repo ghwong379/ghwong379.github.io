@@ -26,18 +26,18 @@
 <meta property="og:site_name" content="Keep it simple">
 <meta property="og:description" content="Hexo 是什麼靜態網頁的魅力，由於愛玩的個性使然，看到新的東西就想試試看。可以產生靜態頁面，加速瀏覽下載，版本升級維護容易，且不須任何資料庫即可運行。 Wordpress importer可將wordpress export成xml，導入系統一次完成。使用上非常簡單， 安裝外掛1npm install hexo-migrator-wordpress --save 匯出wordpress xml然">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://ghwong379.github.io/images/hexo-admin.png">
-<meta property="og:image" content="https://ghwong379.github.io/images/hexo-codewrap.png">
-<meta property="og:image" content="https://ghwong379.github.io/images/pasted-27.png">
-<meta property="og:image" content="https://ghwong379.github.io/images/hexo-disqus.png">
-<meta property="og:image" content="https://ghwong379.github.io/images/pasted-29.png">
+<meta property="og:image" content="https://ghwong379.github.io/hexoblog/images/hexo-admin.png">
+<meta property="og:image" content="https://ghwong379.github.io/hexoblog/images/hexo-codewrap.png">
+<meta property="og:image" content="https://ghwong379.github.io/hexoblog/images/pasted-27.png">
+<meta property="og:image" content="https://ghwong379.github.io/hexoblog/images/hexo-disqus.png">
+<meta property="og:image" content="https://ghwong379.github.io/hexoblog/images/pasted-29.png">
 <meta property="article:published_time" content="2022-07-08T14:39:00.000Z">
 <meta property="article:modified_time" content="2024-11-04T03:18:36.022Z">
 <meta property="article:author" content="Kala 雞腿堡">
 <meta property="article:tag" content="系統">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ghwong379.github.io/images/hexo-admin.png">
+<meta name="twitter:image" content="https://ghwong379.github.io/hexoblog/images/hexo-admin.png">
 
 
 <link rel="canonical" href="https://ghwong379.github.io/hexoblog/2022/07/Hexo-%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98/">
@@ -232,7 +232,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/services/web </span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm init</span><br><span class="line">npm install hexo-theme-melody</span><br><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
 
 <h3 id="安裝指定版本"><a href="#安裝指定版本" class="headerlink" title="安裝指定版本"></a>安裝指定版本</h3><p><code>npm install hexo@x.x.x</code></p>
-<h2 id="後臺管理介面及佈署指令"><a href="#後臺管理介面及佈署指令" class="headerlink" title="後臺管理介面及佈署指令"></a>後臺管理介面及佈署指令</h2><p><img src="/images/hexo-admin.png" alt="Hexo-admin後台畫面"></p>
+<h2 id="後臺管理介面及佈署指令"><a href="#後臺管理介面及佈署指令" class="headerlink" title="後臺管理介面及佈署指令"></a>後臺管理介面及佈署指令</h2><p><img src="/hexoblog/images/hexo-admin.png" alt="Hexo-admin後台畫面"></p>
 <p>以下這段文字需增加在<code>_config.melody.yml</code></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">admin:</span><br><span class="line">  username:使用者名稱 </span><br><span class="line">  password_hash: 密碼</span><br><span class="line">  secret: </span><br><span class="line">  deployCommand: <span class="string">&#x27;./hexo-deploy.sh&#x27;</span></span><br></pre></td></tr></table></figure>
 
@@ -242,15 +242,15 @@
 <p><del>不知怎地，資料無法放在Github, Gitlab, 只好先放在自己的Synology，做一個虛擬主機應付著。試了幾次發現目前的官網上的主題都無法安裝完成，真是煩人，目前正努力學習中，希望早日找到解方。</del>終於找到一篇比較清楚的教程，設定好了</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  reposity: </span><br><span class="line">  branch: </span><br></pre></td></tr></table></figure>
 
-<h2 id="Melody-主題安裝"><a href="#Melody-主題安裝" class="headerlink" title="Melody 主題安裝"></a>Melody 主題安裝</h2><h3 id="安裝方式"><a href="#安裝方式" class="headerlink" title="安裝方式"></a>安裝方式</h3><h3 id="架構主題"><a href="#架構主題" class="headerlink" title="架構主題"></a>架構主題</h3><p><img src="/images/hexo-codewrap.png" alt="程式碼自動換行"></p>
-<h3 id="安裝disqus"><a href="#安裝disqus" class="headerlink" title="安裝disqus"></a>安裝disqus</h3><p><img src="/images/pasted-27.png" alt="config.yml"></p>
-<p><img src="/images/hexo-disqus.png" alt="安裝畫面"></p>
+<h2 id="Melody-主題安裝"><a href="#Melody-主題安裝" class="headerlink" title="Melody 主題安裝"></a>Melody 主題安裝</h2><h3 id="安裝方式"><a href="#安裝方式" class="headerlink" title="安裝方式"></a>安裝方式</h3><h3 id="架構主題"><a href="#架構主題" class="headerlink" title="架構主題"></a>架構主題</h3><p><img src="/hexoblog/images/hexo-codewrap.png" alt="程式碼自動換行"></p>
+<h3 id="安裝disqus"><a href="#安裝disqus" class="headerlink" title="安裝disqus"></a>安裝disqus</h3><p><img src="/hexoblog/images/pasted-27.png" alt="config.yml"></p>
+<p><img src="/hexoblog/images/hexo-disqus.png" alt="安裝畫面"></p>
 <h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><p>可自訂首頁圖片，文章中圖片可以相簿方式瀏覽<br>Melody &gt; 5.0，安裝時，需製作_config.melody.yml</p>
 <blockquote>
 <p>Hexo version &gt;&#x3D; 5.0 theme-melody v1.8.0+<br>create a _config.melody.yml in your hexo work folder.<br>copy the contents of .&#x2F;node_modules&#x2F;hexo-theme-melody&#x2F;_config.yml (so you should install hexo-theme-melody first.) to _config.melody.yml.</p>
 </blockquote>
 <h2 id="Next-主題也不錯"><a href="#Next-主題也不錯" class="headerlink" title="Next 主題也不錯"></a>Next 主題也不錯</h2><p><a target="_blank" rel="noopener" href="https://molunerfinn.com/hexo-theme-melody-doc/">Source</a></p>
-<p><img src="/images/pasted-29.png" alt="next-muse"></p>
+<p><img src="/hexoblog/images/pasted-29.png" alt="next-muse"></p>
 <p>記得next的設計要修改node_module&#x2F;hexo-theme-next&#x2F;_config.ymal</p>
 <p>其中有關搜尋的功能</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Algolia Search</span></span><br><span class="line"><span class="comment"># For more information: https://www.algolia.com</span></span><br><span class="line"><span class="attr">algolia_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
